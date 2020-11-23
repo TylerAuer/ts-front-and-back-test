@@ -1,0 +1,19 @@
+import express, { Request, Response } from 'express';
+const app = express();
+const port = 3000;
+
+////////////////////////////////////////////////////////////////////////////////
+//   SERVE CLIENT APP   ////////////////////////////////////////////////////////
+
+app.use(express.static(__dirname + '/client'));
+
+app.get('/', (req: Request, res: Response): void => {
+  res.sendFile(__dirname + '/client/index.html');
+});
+
+////////////////////////////////////////////////////////////////////////////////
+//   START SERVER   ////////////////////////////////////////////////////////////
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
