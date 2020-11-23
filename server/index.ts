@@ -1,14 +1,14 @@
 import express, { Request, Response } from 'express';
 const app = express();
-const port = 3000;
+const port = 4000;
 
 ////////////////////////////////////////////////////////////////////////////////
 //   SERVE CLIENT APP   ////////////////////////////////////////////////////////
 
-app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/app'));
 
 app.get('/', (req: Request, res: Response): void => {
-  res.sendFile(__dirname + '/client/index.html');
+  res.sendFile(__dirname + '/app/index.html');
 });
 
 ////////////////////////////////////////////////////////////////////////////////
